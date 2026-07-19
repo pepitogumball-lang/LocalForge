@@ -42,3 +42,4 @@
 ## GitHub Actions
 
 El proyecto incluye un workflow en `.github/workflows/android.yml` que compila automáticamente la aplicación en cada push a la rama `main`.
+7. aunque ni se para que XD
