@@ -27,4 +27,26 @@ class SettingsRepository(private val context: Context) {
             it[AUTO_START] = autoStart
         }
     }
+
+    suspend fun saveAutoStart(enabled: Boolean) {
+        context.dataStore.edit {
+            it[AUTO_START] = enabled
+        }
+    }
+
+    suspend fun savePort(port: Int) {
+        context.dataStore.edit {
+            it[PORT] = port
+        }
+    }
+
+    suspend fun saveRootUri(uri: String?) {
+        context.dataStore.edit {
+            if (uri != null) {
+                it[ROOT_URI] = uri
+            } else {
+                it.remove(ROOT_URI)
+            }
+        }
+    }
 }
